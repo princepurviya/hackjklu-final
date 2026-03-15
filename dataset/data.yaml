@@ -1,0 +1,12 @@
+train: train/images
+val: valid/images
+
+nc: 2
+names: ['NoPres', 'Pres']
+
+roboflow:
+  workspace: pek
+  project: pen-dftlb
+  version: 7
+  license: MIT
+  url: https://universe.roboflow.com/pek/pen-dftlb/dataset/7
