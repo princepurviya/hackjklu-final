@@ -1,0 +1,13 @@
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 2
+names: ['bottle', 'cup']
+
+roboflow:
+  workspace: punpun-b6bzo
+  project: bottle-ngv45
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/punpun-b6bzo/bottle-ngv45/dataset/2
