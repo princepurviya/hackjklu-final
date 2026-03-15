@@ -18,7 +18,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-10 sm:pt-16 md:pt-24 pb-16 md:pb-24"
+      className="hero-shell"
       style={{ background: "linear-gradient(135deg, #0a0a0f 0%, #0d0b1e 40%, #091018 70%, #0a0a0f 100%)" }}
     >
       <video
@@ -49,11 +49,11 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative w-full max-w-4xl mx-auto text-center px-6">
+      <div className="hero-content-wrap">
         {/* badge */}
-        <motion.div {...fadeUp(0)} className="mb-4">
-          <span className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-[0.14em] uppercase bg-[#c9a84c]/[0.08] text-[#c9a84c] border border-[#c9a84c]/15">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#c9a84c] animate-pulse" />
+        <motion.div {...fadeUp(0)} className="hero-badge-wrap" data-animate="fade-up">
+          <span className="hero-badge">
+            <span className="hero-badge-dot" />
             AI-Powered Exhibit Monitoring
           </span>
         </motion.div>
@@ -61,34 +61,30 @@ export default function HeroSection() {
         {/* title */}
         <motion.h1
           {...fadeUp(0.15)}
-          className="text-4xl sm:text-6xl lg:text-[4.8rem] font-extrabold text-white leading-[1.1] tracking-tight"
+          className="hero-title"
+          data-animate="fade-up"
         >
-          <span className="block">Protecting Heritage</span>
-          <span className="block mt-2 text-3xl sm:text-5xl lg:text-[4.3rem] leading-[1.1]">with{" "}
-            <span className="bg-gradient-to-r from-[#c9a84c] via-[#e8c547] to-[#d4a843] bg-clip-text text-transparent">
-              Artificial Intelligence
-            </span>
-          </span>
+          <span className="block">AI-Powered Exhibit</span>
+          <span className="hero-title-accent">Monitoring</span>
         </motion.h1>
 
         {/* subtitle */}
-        <div className="mt-6 mb-8 sm:mb-12 flex justify-center">
+        <div className="hero-subtitle-wrap" data-animate="fade-up">
           <motion.p
             {...fadeUp(0.3)}
-            className="w-full max-w-[680px] text-base sm:text-lg lg:text-[1.16rem] text-[#8a8480] leading-[1.7] px-4"
+            className="hero-subtitle"
           >
-            Advanced computer vision monitors museum exhibits 24/7, detecting
-            damage, misplacement, and structural deterioration before it&#39;s too
-            late.
+            A comprehensive deep-learning solution designed specifically for the unique
+            environment and challenges of preserving historical artifacts.
           </motion.p>
         </div>
 
-        <motion.div {...fadeUp(0.45)} className="flex justify-center">
+        <motion.div {...fadeUp(0.45)} className="hero-cta-wrap" data-animate="fade-up">
           <button
             type="button"
             onClick={handleStartSystem}
             disabled={starting}
-            className="inline-flex items-center justify-center min-w-[180px] px-8 py-3.5 rounded-full bg-gradient-to-r from-[#c9a84c] to-[#e8c547] text-[#0a0a0f] font-bold text-sm tracking-wide shadow-lg shadow-[#c9a84c]/20 hover:shadow-xl hover:shadow-[#c9a84c]/30 hover:-translate-y-0.5 transition-all duration-300"
+            className="hero-cta-button hover-scale-button"
           >
             {starting ? "Starting..." : "Start System"}
           </button>
@@ -100,13 +96,13 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="hero-scroll-indicator"
       >
-        <div className="w-7 h-11 rounded-full border-2 border-white/15 flex justify-center pt-2.5">
+        <div className="hero-scroll-track">
           <motion.div
             animate={{ y: [0, 9, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            className="w-1.5 h-1.5 rounded-full bg-[#c9a84c]"
+            className="hero-scroll-dot"
           />
         </div>
       </motion.div>
